@@ -1,5 +1,5 @@
 flask
 flask-cors
 python-dotenv
-pymongo[srv]
+mysql-connector-python
 gunicorn
