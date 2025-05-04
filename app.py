@@ -6,32 +6,21 @@ from dotenv import load_dotenv
 
 import os
 
-import mysql.connector
+from pymongo import MongoClient
 
 
 load_dotenv()
 
-host = os.getenv("DB_HOST")
-user = os.getenv("DB_USER")
-password = os.getenv("DB_PASSWORD")
-database = os.getenv("DB_NAME")
+mongo_uri = os.getenv("MONGO_URI")
+client = MongoClient(mongo_uri)
+db = client["formularioCustomers"]
 
 def createApp():
     app = Flask(__name__)
     CORS(app)
 
-    db = mysql.connector.connect(
-        host = "localhost",
-        user = "root",
-        password = "uck7jivl",
-        database = "clientes_database"
-    )
-
-    cursor = db.cursor()
-
     @app.route("/guardar", methods=["POST"])
     def guardar():
-
         try:
             data = request.get_json()
             firstNames = data["firstNames"]
@@ -40,15 +29,18 @@ def createApp():
             phoneNumber = data["phoneNumber"]
             date = data["date"]
 
-            sql = "INSERT INTO clients (firstNames, lastNames, email, phoneNumber, birthDate) VALUES (%s, %s, %s, %s, %s)"
-            valores = (firstNames, lastNames, email, phoneNumber, date)
-            cursor.execute(sql, valores)
-            db.commit()
+            db.customers.insert_one({
+                "firstNames": firstNames,
+                "lastNames": lastNames,
+                "email": email,
+                "phoneNumber": phoneNumber,
+                "birthDate": date
+            })
 
             return jsonify({"mensaje": "Datos guardados con exito"}), 200
 
         except Exception as e:
-            print("Error al guardar en la base de datos:", e)
+            print("Error al guardar en MongoDB:", e)
             return jsonify({"error": "Error al guardar datos"}), 500
     
     return app
