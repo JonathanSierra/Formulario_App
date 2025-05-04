@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="src/logo.webp" alt="Farmacenter">
+        </div>
+    </header>
+    <main>
+        <form id="form" class="form-box" action="">
+            <div class="form-title">
+                <h1>Datos del cliente</h1>
+                <p>Por favor ingrese sus datos:</p>
+            </div>
+            <div class="form-content">
+                <div class="input-box">
+                    <h3>Nombres:</h3>
+                    <input type="text" name="firstNames" id="txtFirstNames" placeholder="Ingrese sus nombres">
+                </div>
+                <div class="input-box">
+                    <h3>Apellidos:</h3>
+                    <input type="text" name="lastNames" id="txtLastNames" placeholder="Ingrese sus apellidos">
+                </div>
+                <div class="input-box">
+                    <h3>Correo:</h3>
+                    <input type="email" name="email" id="txtEmail" placeholder="Ingrese su correo">
+                </div>
+                <div class="input-box">
+                    <h3>Numero de telefono:</h3>
+                    <input type="number" name="phone" id="txtPhoneNumber" placeholder="Numero de telefono" step="any">
+                </div>
+                <div class="input-box">
+                    <h3>Fecha de nacimiento:</h3>
+                    <input type="date" name="birthDate" id="txtBirthDate">
+                </div>
+                <button type="submit" id="btnSend">Enviar</button>
+            </div>
+        </form>
+    </main>
+    <footer>
+        <p>&copy;Farmacenter 2025</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
