@@ -18,10 +18,6 @@ db = client["formularioCustomers"]
 def createApp():
     app = Flask(__name__)
     CORS(app)
-
-    @app.route("/", methods=["GET"])
-    def home():
-        return jsonify({"mensaje":"API funcionando correctamente"}), 200
     
     @app.route("/guardar", methods=["POST"])
     def guardar():
