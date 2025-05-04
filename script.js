@@ -14,7 +14,7 @@ form.addEventListener("submit", async function (event) {
 
     try {
 
-        const response = await fetch("http://localhost:5000/guardar", {
+        const response = await fetch("https://formulario-app.onrender.com/guardar", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
