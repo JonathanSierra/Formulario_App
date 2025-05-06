@@ -45,7 +45,9 @@ def createApp():
             return jsonify({"mensaje": "Datos guardados con exito"}), 200
 
         except Exception as e:
+            import traceback
             print("Error al guardar en MongoDB:", e)
+            traceback.print_exc()
             return jsonify({"error": "Error al guardar datos"}), 500
     
     return app
