@@ -17,7 +17,7 @@ db = client["formularioCustomers"]
 collection = db["customers"]
 
 def createApp():
-    app = Flask(__name__, template_folder="templates")
+    app = Flask(__name__, template_folder="templates", static_folder="static")
     CORS(app)
 
     @app.route("/")
@@ -46,9 +46,9 @@ def createApp():
 
         except Exception as e:
             import traceback
-            print("Error al guardar en MongoDB:", e)
+            print("Error al guardar en la base de datos:", e)
             traceback.print_exc()
-            return jsonify({"error": "Error al guardar datos"}), 500
+            return jsonify({"error": "Error al guardar datos"}), 500    
     
     return app
 
