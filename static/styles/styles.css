@@ -5,7 +5,7 @@
 }
 
 body, html{
-    background-color: #0e2475;
+    background: linear-gradient(to right, #1338bb 50%, #0b278c);
     min-height: 100%;
     min-width: 100%;
 }
