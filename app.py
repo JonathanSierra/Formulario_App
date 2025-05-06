@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 
 from flask_cors import CORS
 
@@ -14,6 +14,7 @@ load_dotenv()
 mongo_uri = os.getenv("MONGO_URI")
 client = MongoClient(mongo_uri)
 db = client["formularioCustomers"]
+collection = db["customers"]
 
 def createApp():
     app = Flask(__name__)
@@ -22,7 +23,7 @@ def createApp():
     @app.route("/", methods=["GET"])
     def home():
         return jsonify({"mensaje":"API funcionando correctamente"}), 200
-    
+
     @app.route("/guardar", methods=["POST"])
     def guardar():
         try:
@@ -33,7 +34,7 @@ def createApp():
             phoneNumber = data["phoneNumber"]
             date = data["date"]
 
-            db.customers.insert_one({
+            collection.insert_one({
                 "firstNames": firstNames,
                 "lastNames": lastNames,
                 "email": email,
