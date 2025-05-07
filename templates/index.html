@@ -9,50 +9,63 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
 
+<div class="emergentWrapper" id="emergentWrapper">
+    <div class="emergentBox" id="emergentBox">
+        <p>Datos enviados correctamenmte</p>
+        <h2>¡Gracias por su colaboracion!</h2>
+        <button>Aceptar</button>
+    </div>
+</div>
+    
 <body>
-    <header>
-        <div class="logo">
-            <img src="{{ url_for('static', filename='src/logo.webp')}}" alt="Farmacenter">
-        </div>
-    </header>
-    <main>
-        <form id="form" class="form-box" action="">
-            <div class="form-title">
-                <h1>Datos del cliente</h1>
-                <p>Por favor ingrese sus datos:</p>
+        <header>
+            <div class="logo">
+                <img src="{{ url_for('static', filename='src/logo.webp')}}" alt="Farmacenter">
             </div>
-            <div class="form-content">
-                <div class="input-box">
-                    <h3>Nombres:</h3>
-                    <input type="text" name="firstNames" id="txtFirstNames" placeholder="Ingrese sus nombres" required>
-                </div>
-                <div class="input-box">
-                    <h3>Apellidos:</h3>
-                    <input type="text" name="lastNames" id="txtLastNames" placeholder="Ingrese sus apellidos" required>
-                </div>
-                <div class="input-box">
-                    <h3>Correo:</h3>
-                    <input type="email" name="email" id="txtEmail" placeholder="Ingrese su correo" required>
-                </div>
-                <div class="input-box">
-                    <h3>Número de teléfono:</h3>
-                    <input type="text" name="phone" id="txtPhoneNumber" placeholder="Número de teléfono" maxlength="15" pattern="\d*" inputmode="numeric" required>
-                </div>
-                <div class="input-box">
-                    <h3>Fecha de nacimiento:</h3>
-                    <input type="text" name="birthDate" id="txtBirthDate" placeholder="Seleccione una fecha" inputmode="none" autocomplete="off" required>
-                </div>
-                <button type="submit" id="btnSend">Enviar</button>
-            </div>
-        </form>
-    </main>
-    <footer>
-        <p>&copy;Farmacenter 2025</p>
-    </footer>
+        </header>
 
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/es.js"></script>
+        <main>
+            <form id="form" class="form-box" action="">
+                <div class="form-title">
+                    <h1>Datos del cliente</h1>
+                    <p>Por favor ingrese sus datos:</p>
+                </div>
+                <div class="form-content">
+                    <div class="input-box">
+                        <h3>Nombres:</h3>
+                        <input type="text" name="firstNames" id="txtFirstNames" placeholder="Ingrese sus nombres"
+                            required>
+                    </div>
+                    <div class="input-box">
+                        <h3>Apellidos:</h3>
+                        <input type="text" name="lastNames" id="txtLastNames" placeholder="Ingrese sus apellidos"
+                            required>
+                    </div>
+                    <div class="input-box">
+                        <h3>Correo:</h3>
+                        <input type="email" name="email" id="txtEmail" placeholder="Ingrese su correo" required>
+                    </div>
+                    <div class="input-box">
+                        <h3>Número de teléfono:</h3>
+                        <input type="text" name="phone" id="txtPhoneNumber" placeholder="Número de teléfono"
+                            maxlength="15" pattern="\d*" inputmode="numeric" required>
+                    </div>
+                    <div class="input-box">
+                        <h3>Fecha de nacimiento:</h3>
+                        <input type="text" name="birthDate" id="txtBirthDate" placeholder="Seleccione una fecha  d-m-a"
+                            required>
+                    </div>
+                    <button type="submit" id="btnSend">Enviar</button>
+                </div>
+            </form>
+        </main>
+        <footer>
+            <p>&copy;Farmacenter 2025</p>
+        </footer>
+
+        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/es.js"></script>
 </body>
 
 </html>
