@@ -31,7 +31,6 @@ form.addEventListener("submit", async function (event) {
 
         const respuesta = await response.json();
         console.log("Respuesta del backend", respuesta);
-        alert("Datos enviados correctamente");
 
     } catch (error) {
         console.error("Error al enviar los datos:", error);
