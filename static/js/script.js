@@ -43,8 +43,9 @@ document.getElementById("txtPhoneNumber").addEventListener("input", function(e) 
 
 document.addEventListener("DOMContentLoaded", function(){
     flatpickr("#txtBirthDate", {
-        dateFormat: "Y-m-d",
+        dateFormat: "d-m-Y",
         locale: "es",
-        disableMobile: true
+        disableMobile: true,
+        allowInput: true
     });
 });
