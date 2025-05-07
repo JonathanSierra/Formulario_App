@@ -25,9 +25,20 @@ form.addEventListener("submit", async function (event) {
         if (!response.ok) {
             throw new Error("Error del servidor: " + response.status);
         }else{
-            document.getElementById("emergentWrapper").style.display = "flex";
+            document.getElementById("emergentWrapper").classList.add("show");
             document.body.style.overflow = "hidden";
         }
+
+        const aceptar = document.getElementById("btnAccept").addEventListener("click", () => {
+            document.getElementById("emergentWrapper").classList.remove("show");
+            document.body.style.overflow = "visible";
+
+            document.getElementById("txtFirstNames").value = ""
+            document.getElementById("txtLastNames").value = ""
+            document.getElementById("txtEmail").value = ""
+            document.getElementById("txtPhoneNumber").value = ""
+            document.getElementById("txtBirthDate").value = ""
+        })
 
         const respuesta = await response.json();
         console.log("Respuesta del backend", respuesta);
