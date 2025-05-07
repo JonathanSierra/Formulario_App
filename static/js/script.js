@@ -36,3 +36,14 @@ form.addEventListener("submit", async function (event) {
     }
 
 });
+
+document.getElementById("txtPhoneNumber").addEventListener("input", function(e) {
+    this.value = this.value.replace(/[^0-9]/g, '');
+});
+
+document.addEventListener("DOMContentLoaded", function(){
+    flatpickr("#txtBirthDate", {
+        dateFormat: "Y-m-d",
+        locale: "es",
+    });
+});
