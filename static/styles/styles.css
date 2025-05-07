@@ -1,17 +1,18 @@
-*{
+* {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin: 0;
     padding: 0;
 }
 
-body, html{
+body,
+html {
     background: linear-gradient(to right, #1338bb 50%, #0b278c);
     background-attachment: fixed;
     min-height: 100%;
     min-width: 100%;
 }
 
-header{
+header {
     display: flex;
     align-items: center;
     width: 100%;
@@ -20,7 +21,7 @@ header{
     background: linear-gradient(to right, #1338bb 50%, #0b278c);
 }
 
-main{
+main {
     display: flex;
     width: 100%;
     padding: 50px 0;
@@ -29,7 +30,7 @@ main{
     background-color: #edecec;
 }
 
-footer{
+footer {
     display: flex;
     width: 100%;
     height: 10vh;
@@ -40,18 +41,18 @@ footer{
     color: #f4f4f4;
 }
 
-.logo{
+.logo {
     width: 500px;
     height: 100px;
     margin-left: 15px;
 }
 
-.logo img{
+.logo img {
     width: 100%;
     height: 100%;
 }
 
-.form-box{
+.form-box {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -65,7 +66,7 @@ footer{
     box-shadow: 5px 5px 10px rgb(163, 163, 163);
 }
 
-.form-title{
+.form-title {
     display: flex;
     flex-direction: column;
     gap: 55px;
@@ -73,7 +74,7 @@ footer{
     height: 100px;
 }
 
-.form-content{
+.form-content {
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -81,24 +82,24 @@ footer{
     height: 70%;
 }
 
-.form-title h1{
+.form-title h1 {
     text-align: center;
 }
 
-.form-title p{
+.form-title p {
     font-size: 20px;
     border-bottom: 2px solid #8f8f8f;
     padding-bottom: 10px;
 }
 
-.input-box{
+.input-box {
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 10px;
 }
 
-.input-box input{
+.input-box input {
     padding: 5px;
     width: 95%;
     height: 20px;
@@ -109,7 +110,7 @@ footer{
 }
 
 
-.form-content button{
+button {
     width: 100px;
     height: 50px;
     align-self: center;
@@ -125,51 +126,145 @@ footer{
     transition: background-color 0.1s ease;
 }
 
-.form-content button:hover{
+.form-content button:hover {
     background-color: #0c2788;
 }
 
-@media (max-width: 768px ) {
-    .form-box{
+.emergentWrapper {
+    display: none;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(84, 84, 84, 0.7);
+}
+
+.emergentBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    width: 20%;
+    height: 30%;
+    border: 2px solid #585858;
+    box-shadow: #585858 5px 5px 10px;
+    border-radius: 20px;
+    background-color: #edecec;
+}
+
+.emergentBox p {
+    font-size: 18px;
+}
+
+
+@media (max-width: 1535px) {
+    .emergentBox {
+        width: 25%;
+    }
+
+}
+
+@media (max-width: 1212px) {
+    .emergentBox {
+        width: 30%;
+    }
+}
+@media (max-width: 768px) {
+    .emergentBox {
+        width: 35%;
+    }
+
+    .emergentBox h2{
+        font-size: 20px;
+    }
+
+}
+
+@media (max-width: 425px) {
+    .emergentBox {
+        width: 50%;
+    }
+
+    .emergentBox p{
+        font-size: 14px;
+    }
+
+    .emergentBox h2{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 375px) {
+    .emergentBox {
+        width: 63%;
+    }
+
+    .emergentBox p{
+        font-size: 13px;
+    }
+
+    .emergentBox h2{
+        font-size: 15px;
+    }
+
+}
+
+@media (max-width: 320px) {
+    .emergentBox {
+        width: 65%;
+    }
+
+    .emergentBox p{
+        font-size: 12px;
+    }
+
+    .emergentBox h2{
+        font-size: 13px;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .form-box {
         width: 75%;
     }
 
-    header{
+    header {
         justify-content: center;
     }
 
-    .logo{
+    .logo {
         width: 400px;
         height: 80px;
         margin: 0;
     }
+
 }
 
-@media (max-width: 304px ) {
-    .form-title{
+@media (max-width: 304px) {
+    .form-title {
         gap: 20px;
     }
+
 }
 
-@media (max-height: 820px ) {
+@media (max-height: 820px) {
 
-    .logo{
+    .logo {
         width: 300px;
         height: 70px;
     }
 }
 
-@media (max-width: 440px ) {
-    .logo{
+@media (max-width: 440px) {
+    .logo {
         width: 295px;
     }
-    .form-box{
+
+    .form-box {
         width: 85%;
     }
-}
 
-/* @media (min-height: 1029px ) {
-    body{
-        border: 2px solid red;
-    }
-} */
+}
