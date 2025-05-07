@@ -45,5 +45,6 @@ document.addEventListener("DOMContentLoaded", function(){
     flatpickr("#txtBirthDate", {
         dateFormat: "Y-m-d",
         locale: "es",
+        disableMobile: true
     });
 });
