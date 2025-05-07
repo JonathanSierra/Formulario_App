@@ -24,11 +24,14 @@ form.addEventListener("submit", async function (event) {
 
         if (!response.ok) {
             throw new Error("Error del servidor: " + response.status);
+        }else{
+            document.getElementById("emergentWrapper").style.display = "flex";
+            document.body.style.overflow = "hidden";
         }
 
         const respuesta = await response.json();
         console.log("Respuesta del backend", respuesta);
-        alert("formulario enviado correctamente");
+        alert("Datos enviados correctamente");
 
     } catch (error) {
         console.error("Error al enviar los datos:", error);
@@ -45,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function(){
     flatpickr("#txtBirthDate", {
         dateFormat: "d-m-Y",
         locale: "es",
-        disableMobile: true,
-        allowInput: true
+        allowInput: true,
+        disableMobile: true
     });
 });
